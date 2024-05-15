@@ -3,6 +3,7 @@ import {usePrivy} from '@privy-io/react-auth'
 import running from '/running.gif'
 import bg3 from '/bg3.webp'
 import styled from 'styled-components'
+import Modal from './components/Modal'
 import './App.css'
 
 const Main = styled.main`
@@ -21,11 +22,16 @@ function App() {
   const {ready, authenticated, login, user} = usePrivy();
   // Disable login when Privy is not ready or the user is already authenticated
   const disableLogin = !ready || (ready && authenticated);
+  const [questModal, setQuestModal] = useState(false);
 
   console.log(user)
 
   return (
     <Main>
+      {questModal && <Modal onExit={() => setQuestModal(false)}>
+        <h1>Quests</h1>
+        </Modal>
+      }
     <button disabled={disableLogin} onClick={login}>
       Log in
       </button>
@@ -49,7 +55,7 @@ function App() {
       <div className="card">
         <Img src={running} className="char" width="200" alt="Character sprite" /> 
       </div>
-      <button onClick={() => {}}>
+      <button onClick={() => setQuestModal(true)}>
         Quest
       </button>
     </Main>
