@@ -13,6 +13,10 @@ const Main = styled.main`
   box-sizing: border-box;
 `
 
+const Img = styled.img`
+  filter: drop-shadow(0px 7px 5px #22222255);
+`
+
 function App() {
   const {ready, authenticated, login, user} = usePrivy();
   // Disable login when Privy is not ready or the user is already authenticated
@@ -22,20 +26,32 @@ function App() {
 
   return (
     <Main>
+    <button disabled={disableLogin} onClick={login}>
+      Log in
+      </button>
       <br/>
       <br/>
       <br/>
       <br/>
-      <h1>Odyssey</h1>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <div className="card">
-        <button disabled={disableLogin} onClick={login}>
-          Log in
-        </button>
-        <button onClick={() => {}}>
-          Quest
-        </button>
+        <Img src={running} className="char" width="200" alt="Character sprite" /> 
       </div>
-      <img src={running} className="char" width="400" alt="Character sprite" /> 
+      <button onClick={() => {}}>
+        Quest
+      </button>
     </Main>
   )
 }
