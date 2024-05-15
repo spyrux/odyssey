@@ -1,7 +1,17 @@
 import { useState } from 'react'
-import {usePrivy} from '@privy-io/react-auth';
+import {usePrivy} from '@privy-io/react-auth'
 import running from '/running.gif'
+import bg3 from '/bg3.webp'
+import styled from 'styled-components'
 import './App.css'
+
+const Main = styled.main`
+  background:url(${bg3});
+  background-size: cover;
+  padding: 1.5em;
+  min-height: 100vh;
+  box-sizing: border-box;
+`
 
 function App() {
   const {ready, authenticated, login, user} = usePrivy();
@@ -11,10 +21,11 @@ function App() {
   console.log(user)
 
   return (
-    <main>
-      <div>
-        <img src={running} className="char" width="400" alt="Character sprite" />
-      </div>
+    <Main>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1>Odyssey</h1>
       <div className="card">
         <button disabled={disableLogin} onClick={login}>
@@ -24,10 +35,8 @@ function App() {
           Quest
         </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </main>
+      <img src={running} className="char" width="400" alt="Character sprite" /> 
+    </Main>
   )
 }
 
