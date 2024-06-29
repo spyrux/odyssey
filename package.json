@@ -13,11 +13,13 @@
     "@privy-io/react-auth": "^1.64.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "shake.js": "^1.2.2",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
